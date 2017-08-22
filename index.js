@@ -51,7 +51,7 @@ function sennText(sender, text){
 		method: "POST",
 		json: {
 			receipient: {id : sender},
-			message : messageData
+			message : messageData,
 		}
 	}, function(error, response, body){
 		if(error){
