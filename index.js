@@ -3,8 +3,10 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
-
 const app = express()
+
+const API_AI_TOKEN = '';
+const apiAiClient = require('apiai')(API_AI_TOKEN);
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -30,37 +32,86 @@ app.get('/webhook', function(req, res) {
 })
 
 app.post('/webhook', function(req,res) {
-	let messaging_events = req.body.entry[0].messaging
-	for( let i = 0; i < messaging_events.length; i++){
-		let event = messaging_events[i];
-		let sender = event.sender.id
-		if(event.message && event.message.text){
-			let text = event.message.text
-			sendText(sender, "Text echo: " + text.substring(0,100))
-		}
+	// let messaging_events = req.body.entry[0].messaging
+	// for( let i = 0; i < messaging_events.length; i++){
+	// 	let event = messaging_events[i];
+	// 	let sender = event.sender.id
+	// 	if(event.message && event.message.text){
+	// 		let text = event.message.text
+	// 		// sendText(sender, "Text echo: " + text.substring(0,100))
+	// 		decideMessage(sender, text)
+
+	// 	}
+	// }
+	console.log(req.body)
+	if(req.body.object === 'page'){
+		req.body.entry.forEach(function(entry){
+			entry.messaging.forEach(function(event){
+				if(event.message && event.message.text){
+					sendMessage(event)
+				}
+			});
+		});
+		res.sendStatus(200)
 	}
-	res.sendStatus(200)
+
+
+	
 
 })
 
-function sendText(sender, text){
-	let messageData = {text:text}
+function sendMessage(event){
+	let sender = event.sender.id;
+	let text = event.message.text;
 	request({
-		url: "https://graph.facebook.com/v2.6/me/messages",
-		qs : {access_token: token},
-		method: "POST",
-		json: {
-			recipient: {id : sender},
-			message : messageData,
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token: PAGE_ACCESS_TOKEN},
+		method: 'POST',
+		json: 
+		{
+			recipient: {id: sender},
+			message: {text: text}
 		}
-	}, function(error, response, body){
-		if(error){
-			console.log("sending error!")
-		}else if(response.body.error){
-			console.log("response body error!")
+	}, 
+	function (error, response) {
+		if (error) {
+			console.log('Error sending message: ', error);
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error);
 		}
-	})
+	});
+
 }
+
+
+
+// function decideMessage(sender, text1){
+// 	let text = text1.toLowerCase()
+// 	if (text.includes("name")){
+// 		sendText(sender, text)
+// 	}
+// }
+
+
+
+// function sendText(sender, text){
+// 	let messageData = {text:text}
+// 	request({
+// 		url: "https://graph.facebook.com/v2.6/me/messages",
+// 		qs : {access_token: token},
+// 		method: "POST",
+// 		json: {
+// 			recipient: {id : sender},
+// 			message : messageData,
+// 		}
+// 	}, function(error, response, body){
+// 		if(error){
+// 			console.log("sending error!")
+// 		}else if(response.body.error){
+// 			console.log("response body error!")
+// 		}
+// 	})
+// }
 
 app.listen(app.get('port'), function(){
 	console.log("running: port")
