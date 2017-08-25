@@ -8,6 +8,7 @@ const app = express()
 const API_AI_TOKEN = '';
 const apiAiClient = require('apiai')(API_AI_TOKEN);
 
+const FACEBOOK_ACCESS_TOKEN = "EAAbNx8o9hx8BAEIO453RXdg2U069fqNc1vwSdqAMmw5sf1tQbFqpjrLOVd9R7NcIehsZCBsT3mADmcnAcCvdwoVZBVRzRyEd7O0ZCmGSG69B7ZC8MSG6rt9KZAcDAFICQt2X9jXVilnBQHEl930FU4GIQLHCPxSQI43osAp8Y5M8fxIRzgD4I"
 app.set('port', (process.env.PORT || 5000))
 
 // Allows us to process the data
@@ -65,7 +66,7 @@ function sendMessage(event){
 	let text = event.message.text;
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
-		qs: {access_token: PAGE_ACCESS_TOKEN},
+		qs: {access_token: FACEBOOK_ACCESS_TOKEN},
 		method: 'POST',
 		json: 
 		{
