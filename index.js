@@ -44,20 +44,29 @@ app.post('/webhook', function(req,res) {
 
 	// 	}
 	// }
-	console.log(req.body)
-	if(req.body.object === 'page'){
-		req.body.entry.forEach(function(entry){
-			entry.messaging.forEach(function(event){
-				if(event.message && event.message.text){
-					sendMessage(event)
-				}
-			});
+	// console.log(req.body)
+	// if(req.body.object === 'page'){
+	// 	req.body.entry.forEach(function(entry){
+	// 		entry.messaging.forEach(function(event){
+	// 			if(event.message && event.message.text){
+	// 				sendMessage(event)
+	// 			}
+	// 		});
+	// 	});
+	// 	res.sendStatus(200)
+	// }
+
+	req.body.entry.forEach((entry) => {
+		entry.messaging.forEach((event) => {
+			if (event.message && event.message.text) {
+				sendMessage(event);
+			}
 		});
-		res.sendStatus(200)
-	}
-
-
+	});
+	res.status(200).end();
 	
+
+
 
 })
 
