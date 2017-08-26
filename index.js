@@ -6,7 +6,7 @@ const request = require('request')
 const app = express()
 
 const API_AI_TOKEN = "dec5ea1ba1d440a29ca5f6b814317bbc";
-const apiAiClient = require('apiai')(API_AI_TOKEN);
+const apiaiApp = require('apiai')(API_AI_TOKEN);
 
 const FACEBOOK_ACCESS_TOKEN = "EAAbNx8o9hx8BAEIO453RXdg2U069fqNc1vwSdqAMmw5sf1tQbFqpjrLOVd9R7NcIehsZCBsT3mADmcnAcCvdwoVZBVRzRyEd7O0ZCmGSG69B7ZC8MSG6rt9KZAcDAFICQt2X9jXVilnBQHEl930FU4GIQLHCPxSQI43osAp8Y5M8fxIRzgD4I"
 app.set('port', (process.env.PORT || 5000))
