@@ -56,15 +56,17 @@ app.post('/webhook', function(req,res) {
 	// 	res.sendStatus(200)
 	// }
 
-	req.body.entry.forEach((entry) => {
-		entry.messaging.forEach((event) => {
-			if (event.message && event.message.text) {
-				sendMessage(event);
-			}
+	console.log(req.body);
+	if (req.body.object === 'page') {
+		req.body.entry.forEach((entry) => {
+			entry.messaging.forEach((event) => {
+				if (event.message && event.message.text) {
+					sendMessage(event);
+				}
+			});
 		});
-	});
-	res.status(200).end();
-	
+		res.status(200).end();
+	}
 
 
 
