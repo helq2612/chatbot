@@ -21,7 +21,7 @@
 Initiate node.js, and install express, request, body-parser
 ```sh
 $ npm init
-$ npm install express request body-parser --save
+$ npm install express request body-parser apiai--save
 ```
 ## Install heroku and push to heroku
 ```sh
