@@ -5,9 +5,28 @@
 
 
 <p></p>
-<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" width="300" height="80" align="left">
-<img src="https://res.cloudinary.com/crunchbase-production/image/upload/v1422021886/kixmf5uejurno2j4resu.png" width="300" height="80">
+<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" width="300" height="100" align="left">
+<img src="https://blog.phusion.nl/content/images/2016/07/Heroku.png" width="300" height="100" align="left">
+<img src="https://res.cloudinary.com/crunchbase-production/image/upload/v1422021886/kixmf5uejurno2j4resu.png" width="300" height="100">
 <p></p>
+# Instruction
+## node.js
+Initiate node.js, and install express, request, body-parser
+```sh
+$ npm init
+$ npm install express request body-parser --save
+```
+## Install heroku and push to heroku
+```sh
+brew install heroku # isntall heroku
+git init
+heroku --version
+heroku login
+heroku create
+git push heroku master
+```
+Then you will find this link as marked below:
+![](images/heroku.png)
 
 #
 # node.js
