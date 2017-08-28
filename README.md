@@ -58,7 +58,20 @@ git push origin master
 ```
 
 ## api.ai
-
+Go to api.ai, and:
+  - Create your machine learning agent
+  - Add Intents, train and test your agent
+  - connect agent with your chatbot
+  	```sh
+  		const API_AI_TOKEN = "09905af00ae84770b8fb973a7ea3b419";
+		const apiaiApp = require('apiai')(API_AI_TOKEN);
+	```
+	and get text message:
+	```sh
+	let apiai = apiaiApp.textRequest(text, {
+		sessionId: 'tabby_cat' // use any arbitrary id
+	});
+	```
 # useful links:
 http://www.girliemac.com/blog/2017/01/06/facebook-apiai-bot-nodejs/
 https://www.youtube.com/watch?v=bUwiKFTvmDQ&t=1046s
