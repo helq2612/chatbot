@@ -2,7 +2,7 @@
 
 ![](https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png=100x2000)
 
-
+<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" width="50" height="20">
 
 
 #
