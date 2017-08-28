@@ -33,22 +33,6 @@ app.get('/webhook', function(req, res) {
 	res.send("Wrong token")
 })
 
-// app.post('/webhook', function(req,res) {
-
-// 	let messaging_events = req.body.entry[0].messaging
-// 	for( let i = 0; i < messaging_events.length; i++){
-// 		let event = messaging_events[i];
-// 		let sender = event.sender.id
-// 		if(event.message && event.message.text){
-// 			let text = event.message.text
-// 			// sendText(sender, "Text echo: " + text.substring(0,100))
-// 			decideMessage(sender, text)
-
-// 		}
-// 	}
-// 	res.sendStatus(200)
-
-// })
 app.post('/webhook', function(req,res) {
 
 	console.log(req.body);
@@ -64,29 +48,7 @@ app.post('/webhook', function(req,res) {
   }
 
 })
-// no apiai
-// function sendMessage(event){
-// 	let sender = event.sender.id;
-// 	let text = event.message.text;
-// 	apiai.end();
-// 	request({
-// 		url: 'https://graph.facebook.com/v2.6/me/messages',
-// 		qs: {access_token: FACEBOOK_ACCESS_TOKEN},
-// 		method: 'POST',
-// 		json: 
-// 		{
-// 			recipient: {id: sender},
-// 			message: {text: text}
-// 		}
-// 	}, 
-// 	function (error, response) {
-// 		if (error) {
-// 			console.log('Error sending message: ', error);
-// 		} else if (response.body.error) {
-// 			console.log('Error: ', response.body.error);
-// 		}
-// 	});
-// }
+
 // with apiai
 function sendMessage(event){
 	let sender = event.sender.id;
