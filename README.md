@@ -11,7 +11,7 @@
 <p></p>
 #
 # Demo:
-![](https://github.com/helq2612/chatbot/blob/master/images/demo.gif)
+<a href ="https://github.com/helq2612/chatbot/blob/master/images/demo.gif"/> </a>
 
 #
 # Instruction
