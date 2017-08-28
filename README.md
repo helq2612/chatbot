@@ -5,9 +5,9 @@
 
 
 <p></p>
-<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" width="300" height="100" align="left">
-<img src="https://blog.phusion.nl/content/images/2016/07/Heroku.png" width="300" height="100" align="left">
-<img src="https://res.cloudinary.com/crunchbase-production/image/upload/v1422021886/kixmf5uejurno2j4resu.png" width="300" height="100">
+<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" width="250" height="100" align="left">
+<img src="https://blog.phusion.nl/content/images/2016/07/Heroku.png" width="250" height="100" align="left">
+<img src="https://res.cloudinary.com/crunchbase-production/image/upload/v1422021886/kixmf5uejurno2j4resu.png" width="250" height="100">
 <p></p>
 
 #
