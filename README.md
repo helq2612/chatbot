@@ -5,7 +5,7 @@
 
 
 <p></p>
-<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" width="300" height="80">
+<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" width="300" height="80" align="left">
 <img src="https://res.cloudinary.com/crunchbase-production/image/upload/v1422021886/kixmf5uejurno2j4resu.png" width="300" height="80">
 <p></p>
 
