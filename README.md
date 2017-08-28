@@ -2,7 +2,8 @@
 
 ![](https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png=100x2000)
 
-<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" width="50" height="20">
+<img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" width="100" height="40">
+<img src="https://res.cloudinary.com/crunchbase-production/image/upload/v1422021886/kixmf5uejurno2j4resu.png" width="100" height="40">
 
 
 #
