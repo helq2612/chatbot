@@ -11,7 +11,7 @@
 <p></p>
 #
 # Demo:
-![](/images/demo.gif)
+![](https://github.com/helq2612/chatbot/blob/master/images/demo.gif)
 
 #
 # Instruction
