@@ -13,6 +13,10 @@
 #
 # Demo:
 <a href ="https://github.com/helq2612/chatbot/blob/master/images/demo.gif"/> </a>
+<img src="https://github.com/helq2612/chatbot/blob/master/images/demo.gif" >
+
+
+<img src="/images/demo.gif" >
 
 #
 # Instruction
